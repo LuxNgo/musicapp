@@ -1,76 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tên App -->
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ứng Dụng Nghe Nhạc"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
 
     <!-- Thanh tìm kiếm -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
-        android:layout_width="0dp"
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Tìm kiếm bài hát..."
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp"
-        android:background="?attr/colorPrimary" />
+        android:hint="Tìm kiếm bài hát"
+        android:padding="16dp"
+        android:layout_marginBottom="20dp"/>
 
-    <!-- ScrollView chứa nội dung -->
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="0dp"
+    <!-- Button: Các bài hát yêu thích -->
+    <Button
+        android:id="@+id/favoriteSongsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bài hát yêu thích"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Button: Các bài hát nghe gần đây -->
+    <Button
+        android:id="@+id/recentSongsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bài hát gần đây"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Danh sách bài hát -->
+    <TextView
+        android:id="@+id/songListLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh sách bài hát của tôi"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- ListView hiển thị các bài hát -->
+    <ListView
+        android:id="@+id/songListView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <!-- Tiêu đề ANDROID -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="Danh sách yêu thích"
-                android:textStyle="bold"
-                android:padding="8dp" />
-
-            <!-- Danh sách bài hát Android -->
-            <ListView
-                android:id="@+id/listView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF" />
-
-            <!-- Tiêu đề IOS -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:text="Danh sách bài hát"
-                android:textStyle="bold"
-                android:padding="8dp" />
-
-            <!-- Danh sách bài hát IOS -->
-            <ListView
-                android:id="@+id/listView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF" />
-
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:padding="8dp" />
+</LinearLayout>

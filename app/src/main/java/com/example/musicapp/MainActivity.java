@@ -20,13 +20,9 @@ public class MainActivity extends AppCompatActivity {
         songs.add(new Song("Bài hát 3", "Nghệ sĩ 3", R.drawable.ic_music_note));
 
         // Áp dụng adapter cho ListView
-        ListView listView = findViewById(R.id.listView1); // Áp dụng với ListView1
+        ListView listView = findViewById(R.id.songListView); // Áp dụng với ListView1
         SongAdapter adapter = new SongAdapter(this, songs);
         listView.setAdapter(adapter);
 
-        // Áp dụng adapter cho ListView
-        ListView listView2 = findViewById(R.id.listView2); // Áp dụng với ListView1
-        SongAdapter adapter2 = new SongAdapter(this, songs);
-        listView2.setAdapter(adapter2);
     }
 }
